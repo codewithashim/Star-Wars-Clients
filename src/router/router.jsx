@@ -3,6 +3,10 @@ import MainLayouts from "../layouts/MainLayouts";
 import Home from "../pages/Home/Home/Home";
 import CharacterDetail from "../components/CharacterDetail/CharacterDetail";
 import FilmDetails from "../components/FilmDetails/FilmDetails";
+import HomewordlDetail from "../components/HomewordlDetail/HomewordlDetail";
+import VehiclesCard from "../components/VehiclesDetails/VehiclesDetails";
+import StarshipDetails from "../components/StarshipDetails/StarshipDetails";
+import VehiclesDetails from "../components/VehiclesDetails/VehiclesDetails";
 
 const routes = createBrowserRouter([
     {
@@ -19,7 +23,19 @@ const routes = createBrowserRouter([
             },
             {
                 path: "/film/:id",
-                element: <FilmDetails/>
+                element: <FilmDetails />
+            },
+            {
+                path: "/homeworld/:id",
+                element: <HomewordlDetail />
+            },
+            {
+                path: "/vehicle/:id",
+                element: <VehiclesDetails />
+            },
+            {
+                path: "/starship/:id",
+                element: <StarshipDetails />
             }
 
         ]

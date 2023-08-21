@@ -1,30 +1,30 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { characterUrls } from "../../utils/urls/characterUrls";
-import axios from "axios";
 
-const FilmDetails = () => {
+const HomewordlDetail = () => {
     const { id } = useParams();
-    const [filemsData, setFilemsData] = useState([]);
+    const [homeworldData, setHomeworldeData] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchFilemsData = async () => {
+        const fetchHomeworldData = async () => {
             try {
                 const response = await axios.get(
-                    `${characterUrls}/${id}/films`
+                    `${characterUrls}/${id}/homeworld`
                 );
-                setFilemsData(response?.data);
+                setHomeworldeData(response?.data);
             } catch (error) {
                 console.error("Error fetching character data:", error);
             } finally {
                 setLoading(false);
             }
         };
-        fetchFilemsData();
-    })
+        fetchHomeworldData();
+    }, [id])
 
-    const { title, episode_id, opening_crawl, director, producer, release_date, characters, planets, starships, species, vehicles } = filemsData;
+    const { name, rotation_period, orbital_period, diameter, climate, gravity, terrain, surface_water, population, films, residents } = homeworldData
 
     if (loading) {
         return (
@@ -35,12 +35,11 @@ const FilmDetails = () => {
     }
 
 
-
     return (
         <section>
             <div>
                 <h2 className="text-2xl font-semibold text-center mb-4">
-                    Details of {title}
+                    Details of {name}
                 </h2>
             </div>
             <div className="lg:w-[80%] md:w-[80%] w-[95%] col-span-5 md:px-[60px] md:py-[50px] xxs:px-[25px] xs:px-[30px] sm:px-[60px] mx-auto bg-[#F7F7F7] shadow-md rounded-lg  py-10 px-2">
@@ -52,53 +51,80 @@ const FilmDetails = () => {
                                     <tbody>
                                         <tr className="border-b dark:border-neutral-500">
                                             <td className="whitespace-nowrap px-6 py-4 font-medium">
-                                                Name:
+                                                Name :
                                             </td>
                                             <td className="whitespace-nowrap px-6 py-4">
-                                                {title}
+                                                {name}
                                             </td>
                                         </tr>
                                         <tr className="border-b dark:border-neutral-500">
                                             <td className="whitespace-nowrap px-6 py-4 font-medium">
-                                                Episode Id :
+                                                Rotation Period :
                                             </td>
                                             <td className="whitespace-nowrap px-6 py-4">
-                                                {episode_id}
+                                                {rotation_period}
                                             </td>
                                         </tr>
                                         <tr className="border-b dark:border-neutral-500">
                                             <td className="whitespace-nowrap px-6 py-4 font-medium">
-                                                Opening Crawl :
-                                            </td>
-                                            <td className="whitespace-nowrap w-96 px-6 py-4">
-                                                {opening_crawl}
-                                            </td>
-                                        </tr>
-
-                                        <tr className="border-b dark:border-neutral-500">
-                                            <td className="whitespace-nowrap px-6 py-4 font-medium">
-                                                Director :
+                                                Orbital Period :
                                             </td>
                                             <td className="whitespace-nowrap px-6 py-4">
-                                                {director}
+                                                {orbital_period}
                                             </td>
                                         </tr>
 
                                         <tr className="border-b dark:border-neutral-500">
                                             <td className="whitespace-nowrap px-6 py-4 font-medium">
-                                                Producer :
+                                                Diameter :
                                             </td>
                                             <td className="whitespace-nowrap px-6 py-4">
-                                                {producer}
+                                                {diameter}
                                             </td>
                                         </tr>
 
                                         <tr className="border-b dark:border-neutral-500">
                                             <td className="whitespace-nowrap px-6 py-4 font-medium">
-                                                Release Date :
+                                                Climate :
                                             </td>
                                             <td className="whitespace-nowrap px-6 py-4">
-                                                {release_date}
+                                                {climate}
+                                            </td>
+                                        </tr>
+
+                                        <tr className="border-b dark:border-neutral-500">
+                                            <td className="whitespace-nowrap px-6 py-4 font-medium">
+                                                Gravity :
+                                            </td>
+                                            <td className="whitespace-nowrap px-6 py-4">
+                                                {gravity}
+                                            </td>
+                                        </tr>
+
+                                        <tr className="border-b dark:border-neutral-500">
+                                            <td className="whitespace-nowrap px-6 py-4 font-medium">
+                                                Terrain :
+                                            </td>
+                                            <td className="whitespace-nowrap px-6 py-4">
+                                                {terrain}
+                                            </td>
+                                        </tr>
+
+                                        <tr className="border-b dark:border-neutral-500">
+                                            <td className="whitespace-nowrap px-6 py-4 font-medium">
+                                                Surface Water :
+                                            </td>
+                                            <td className="whitespace-nowrap px-6 py-4">
+                                                {surface_water}
+                                            </td>
+                                        </tr>
+
+                                        <tr className="border-b dark:border-neutral-500">
+                                            <td className="whitespace-nowrap px-6 py-4 font-medium">
+                                                Population :
+                                            </td>
+                                            <td className="whitespace-nowrap px-6 py-4">
+                                                {population}
                                             </td>
                                         </tr>
                                     </tbody>
@@ -108,18 +134,19 @@ const FilmDetails = () => {
                     </div>
                 </div>
 
-                <div className="planets-content">
+
+                <div className="filems-content">
                     <h2 className="text-2xl font-semibold my-4">
-                        Planets
+                        Films
                     </h2>
 
-                    <div className="planets border p-4">
+                    <div className="filems">
                         {
-                            planets?.map((planet, index) => {
+                            films?.map((film, index) => {
                                 return (
                                     <div key={index} className="my-2 border p-4">
-                                        <Link to={`/homeworld/${planet.split("/")[5]}`} className="text-blue-500 hover:text-blue-700 dark:text-violet-400 dark:hover:text-violet-500 ">
-                                            Planet   {planet.split("/")[5]}
+                                        <Link to={`/film/${film.split("/")[5]}`} className="text-blue-500 hover:text-blue-700 dark:text-violet-400 dark:hover:text-violet-500 ">
+                                            Filems {index + 1}
                                         </Link>
                                     </div>
                                 );
@@ -129,55 +156,28 @@ const FilmDetails = () => {
 
                 </div>
 
-                <div className="characters-content">
+                <div className="residents-content">
                     <h2 className="text-2xl font-semibold my-4">
-                        Characters
+                        Residents
                     </h2>
-
-                    <div className="characters border p-4">
+                    <div className="residents">
                         {
-                            characters?.map((character, index) => {
+                            residents?.map((resident, index) => {
                                 return (
                                     <div key={index} className="my-2 border p-4">
-                                        <Link to={`/character/${character.split("/")[5]}`} className="text-blue-500 hover:text-blue-700 dark:text-violet-400 dark:hover:text-violet-500 ">
-                                            Character   {character.split("/")[5]}
+                                        <Link to={`/character/${resident.split("/")[5]}`} className="text-blue-500 hover:text-blue-700 dark:text-violet-400 dark:hover:text-violet-500 ">
+                                            Resident {index + 1}
                                         </Link>
                                     </div>
                                 );
                             })
                         }
                     </div>
-
                 </div>
-
-                <div className="vehicles-content">
-                    <h2 className="text-2xl font-semibold my-4">
-                        Vehicles
-                    </h2>
-
-                    <div className="vehicles border p-4">
-                        {
-                            vehicles?.map((vehicle, index) => {
-                                return (
-                                    <div key={index} className="my-2 border p-4">
-                                        <Link to={`/vehicle/${vehicle.split("/")[5]}`} className="text-blue-500 hover:text-blue-700 dark:text-violet-400 dark:hover:text-violet-500 ">
-                                            Vehicle   {vehicle.split("/")[5]}
-                                        </Link>
-                                    </div>
-                                );
-                            })
-                        }
-                    </div>    
-
-                </div>
-
-
-
-
 
             </div>
         </section>
     );
 };
 
-export default FilmDetails;
+export default HomewordlDetail;
