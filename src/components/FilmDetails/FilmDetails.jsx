@@ -34,8 +34,6 @@ const FilmDetails = () => {
         );
     }
 
-
-
     return (
         <section>
             <div>
