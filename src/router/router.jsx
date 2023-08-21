@@ -4,7 +4,6 @@ import Home from "../pages/Home/Home/Home";
 import CharacterDetail from "../components/CharacterDetail/CharacterDetail";
 import FilmDetails from "../components/FilmDetails/FilmDetails";
 import HomewordlDetail from "../components/HomewordlDetail/HomewordlDetail";
-import VehiclesCard from "../components/VehiclesDetails/VehiclesDetails";
 import StarshipDetails from "../components/StarshipDetails/StarshipDetails";
 import VehiclesDetails from "../components/VehiclesDetails/VehiclesDetails";
 

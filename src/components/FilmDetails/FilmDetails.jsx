@@ -24,7 +24,7 @@ const FilmDetails = () => {
         fetchFilemsData();
     })
 
-    const { title, episode_id, opening_crawl, director, producer, release_date, characters, planets, starships, species, vehicles } = filemsData;
+    const { title, episode_id, opening_crawl, director, producer, release_date, characters, planets, starships, vehicles } = filemsData;
 
     if (loading) {
         return (
@@ -167,9 +167,30 @@ const FilmDetails = () => {
                                 );
                             })
                         }
-                    </div>    
+                    </div>
+                </div>
+
+                <div className="starships-content">
+                    <h2 className="text-2xl font-semibold my-4">
+                        Starships
+                    </h2>
+
+                    <div>
+                        {
+                            starships?.map((starship, index) => {
+                                return (
+                                    <div key={index} className="my-2 border p-4">
+                                        <Link to={`/starship/${starship.split("/")[5]}`} className="text-blue-500 hover:text-blue-700 dark:text-violet-400 dark:hover:text-violet-500 ">
+                                            Starship   {starship.split("/")[5]}
+                                        </Link>
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
 
                 </div>
+
 
 
 
