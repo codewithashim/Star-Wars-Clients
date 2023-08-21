@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.common-btn {
+  @apply bg-red-500 text-white font-bold py-2 px-4 rounded;
+}
+
+.container{
+    @apply mx-auto px-4;
+}

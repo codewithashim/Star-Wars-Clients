@@ -1,0 +1,36 @@
+star-wars-explorer/
+|-- client/
+|   |-- src/
+|   |   |-- components/
+|   |   |   |-- CharacterDetail.jsx
+|   |   |   |-- CharacterCard.jsx
+|   |   |-- hooks/
+|   |   |   |-- useCharacter/
+|   |   |       |-- useCharacter.js
+|   |   |-- layouts/
+|   |   |   |-- MainLayouts.jsx
+|   |   |-- pages/
+|   |   |   |-- Character/
+|   |   |       |-- Character.jsx
+|   |   |   |-- Home/
+|   |   |       |-- Home/
+|   |   |           |-- Home.jsx
+|   |   |-- router/
+|   |   |   |-- router.jsx
+|   |   |-- shared/
+|   |   |   |-- Navbar/
+|   |   |       |-- Navbar.jsx
+|   |   |   |-- Pagination/
+|   |   |       |-- Pagination.jsx
+|   |   |-- utils/
+|   |   |   |-- urls/
+|   |   |       |-- characterUrls.js
+|   |   |   |-- network.js
+|   |   |   |-- queries.js    
+|   |   |-- App.js
+|   |   |-- main.js
+
+
+|-- server/
+|   |-- server.js
+|-- package.json
