@@ -6,7 +6,7 @@ const CharacterCard = ({ character }) => {
     const { name, birth_year, url } = character;
 
     return (
-        <div className="">
+        <Link  to={`/character/${url.split("/")[5]}`}>
             <div className="w-full max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
                 <img src={UserImage} alt="character" className="object-cover w-full h-56" />
 
@@ -24,7 +24,7 @@ const CharacterCard = ({ character }) => {
                     </span>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
