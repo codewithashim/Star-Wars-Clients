@@ -1,1 +1,1 @@
-export const BasedUrl = "http://localhost:5000/api/v1/"
+export const BasedUrl = "https://star-wars-server.vercel.app/api/v1/"
