@@ -4,9 +4,11 @@ star-wars-explorer/
 |   |   |-- components/
 |   |   |   |-- CharacterDetail.jsx
 |   |   |   |-- CharacterCard.jsx
-|   |   |-- hooks/
-|   |   |   |-- useCharacter/
-|   |   |       |-- useCharacter.js
+|   |   |   |-- FilmDetails.jsx
+|   |   |   |-- HomewordlDetail.jsx
+|   |   |   |-- Preloader.jsx
+|   |   |   |-- StarshipDetails.jsx
+|   |   |   |-- VehiclesDetails.jsx
 |   |   |-- layouts/
 |   |   |   |-- MainLayouts.jsx
 |   |   |-- pages/
@@ -29,8 +31,3 @@ star-wars-explorer/
 |   |   |   |-- queries.js    
 |   |   |-- App.js
 |   |   |-- main.js
-
-
-|-- server/
-|   |-- server.js
-|-- package.json

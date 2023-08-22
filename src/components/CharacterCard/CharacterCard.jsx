@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { UserImage } from "../../assets";
 
 /* eslint-disable react/prop-types */
 const CharacterCard = ({ character }) => {
@@ -7,6 +8,8 @@ const CharacterCard = ({ character }) => {
     return (
         <div className="">
             <div className="w-full max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <img src={UserImage} alt="character" className="object-cover w-full h-56" />
+
                 <div className="py-5 text-center">
                     <Link
                         to={`/character/${url.split("/")[5]}`}

@@ -28,7 +28,9 @@ npm run dev
 
 # **Project Live Link**
 
-[Live ]()
+`https://stars-wars.vercel.app/ `
+
+[Live Link](https://stars-wars.vercel.app/ "https://stars-wars.vercel.app/")
 
 # **Project Server Installaction**
 
@@ -54,7 +56,7 @@ nodemon server
 
 # API Live Server Link
 
-[API Live Server]()
+`  https://star-wars-server.vercel.app/api/v1/`
 
 # API List
 
@@ -68,8 +70,12 @@ nodemon server
 | 06    | http://localhost:5000/api/v1/ | characters/:id/vehicles             | GET    |
 | 07    | http://localhost:5000/api/v1/ | characters/:id/starships            | GET    |
 
-# Project Stracture
+# Project Structure
 
-### Clients Stracture
+# Clients Structure
 
-![1692646448493](image/README/1692646448493.png)
+![1692663586203](image/README/1692663586203.png)
+
+# **Server Structure**
+
+![1692663639049](image/README/1692663639049.png)
